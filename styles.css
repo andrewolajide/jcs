@@ -145,7 +145,7 @@ button:hover {
 ============================= */
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -156,7 +156,6 @@ button:hover {
 }
 
 .other-pages {
-  position: relative;
   background: var(--white);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -210,7 +209,6 @@ button:hover {
 }
 
 .navbar.scrolled {
-  position: fixed;
   background: white;
   backdrop-filter: blur(10px);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
@@ -221,12 +219,12 @@ button:hover {
   color: var(--primary);
 }
 
-.navbar.scrolled:has(.mobile-menu.active) {
+/* .navbar.scrolled:has(.mobile-menu.active) {
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom: none;
-}
+} */
 
 .nav-bar-row {
   display: flex;
@@ -243,19 +241,19 @@ button:hover {
 
 .hamburger {
   display: none;
+  background: none;
+  border: none;
+  padding: 0;
   position: relative;
   width: 24px;
   height: 18px;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  z-index: 1001; /* keep above menu */
 }
 
 .hamburger span {
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: white;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
@@ -263,10 +261,6 @@ button:hover {
 
 .navbar.scrolled .hamburger span {
   background: var(--primary);
-}
-
-.hamburger.active span {
-  background: white;
 }
 
 .hamburger span:nth-child(1) {
@@ -281,16 +275,11 @@ button:hover {
   transform: translateY(7px);
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg);
+.mobile-menu .close-menu {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .mobile-menu {
@@ -298,8 +287,7 @@ button:hover {
   flex-direction: column;
   position: fixed;
   top: 0;
-  left: 0;
-  padding-top: 3rem;
+  right: 0;
   width: 80%;
   height: 100dvh;
   background: var(--white);
@@ -307,7 +295,8 @@ button:hover {
   z-index: 1005;
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
-  transform: translateX(-100%);
+  transform: translateX(100%);
+  overscroll-behavior: contain;
 }
 
 .mobile-menu.active {
@@ -342,6 +331,32 @@ button:hover {
 
 .mobile-menu .nav-btn span {
   color: var(--white);
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open {
+  touch-action: none;
 }
 
 /* =============================

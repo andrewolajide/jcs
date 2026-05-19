@@ -92,25 +92,31 @@
             <a href="" class="btn nav-btn"><span>Book Now</span></a>
           </div>
 
-          <div class="hamburger" onclick="toggleMenu(this)">
+          <button class="hamburger" aria-expanded="false" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </div>
       </div>
     </nav>
 
-    <ul class="mobile-menu">
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="#projects">Gallery</a></li>
-      <li><a href="#contact">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li>
-        <a href="" class="btn nav-btn"><span>Book Now</span></a>
-      </li>
-    </ul>
+    <div class="menu-overlay"></div>
+
+    <aside class="mobile-menu">
+      <button class="close-menu" onclick="closeMenu()">&times;</button>
+
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#projects">Gallery</a></li>
+        <li><a href="#contact">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="" class="btn nav-btn"><span>Book Now</span></a>
+        </li>
+      </ul>
+    </aside>
 
     <!-- HERO SECTION -->
     <section class="hero">

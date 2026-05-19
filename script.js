@@ -1,31 +1,39 @@
-function toggleMenu(el) {
-  const menu = document.querySelector(".mobile-menu");
-  el.classList.toggle("active");
-  menu.classList.toggle("active");
+const body = document.body;
+const html = document.documentElement;
+
+const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".menu-overlay");
+
+function openMenu() {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+
+  html.classList.add("menu-open");
+  body.classList.add("menu-open");
+
+  hamburger.setAttribute("aria-expanded", "true");
 }
 
-document.addEventListener("click", function (event) {
-  const hamburger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".mobile-menu");
+function closeMenu() {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
 
-  if (
-    !hamburger.contains(event.target) &&
-    !menu.contains(event.target) &&
-    hamburger.classList.contains("active")
-  ) {
-    hamburger.classList.remove("active");
-    menu.classList.remove("active");
-  }
-});
+  html.classList.remove("menu-open");
+  body.classList.remove("menu-open");
 
-// Close mobile menu when a link is clicked
+  hamburger.setAttribute("aria-expanded", "false");
+}
+
+function toggleMenu() {
+  menu.classList.contains("active") ? closeMenu() : openMenu();
+}
+
+hamburger.addEventListener("click", toggleMenu);
+overlay.addEventListener("click", closeMenu);
+
 document.querySelectorAll(".mobile-menu a").forEach((link) => {
-  link.addEventListener("click", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".mobile-menu");
-    hamburger.classList.remove("active");
-    menu.classList.remove("active");
-  });
+  link.addEventListener("click", closeMenu);
 });
 
 // fixed navbar on scroll
