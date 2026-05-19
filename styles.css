@@ -211,20 +211,13 @@ button:hover {
 .navbar.scrolled {
   background: white;
   backdrop-filter: blur(10px);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled a,
 .other-pages a {
   color: var(--primary);
 }
-
-/* .navbar.scrolled:has(.mobile-menu.active) {
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
-} */
 
 .nav-bar-row {
   display: flex;
@@ -253,7 +246,7 @@ button:hover {
 .hamburger span {
   position: absolute;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: white;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
@@ -280,6 +273,7 @@ button:hover {
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  font-weight: 400;
 }
 
 .mobile-menu {
@@ -517,7 +511,7 @@ body.menu-open {
 
 .services h2 {
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 3.2rem;
+  line-height: 3rem;
   font-weight: 400;
 }
 
@@ -662,13 +656,17 @@ body.menu-open {
 
 .our-work h2 {
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 3.2rem;
+  line-height: 3rem;
   font-weight: 400;
 }
 
 .our-work-head {
   display: flex;
   justify-content: space-between;
+}
+
+.our-work-head .btn {
+  width: fit-content;
 }
 
 .work-grid {
@@ -1207,6 +1205,8 @@ footer p {
 
   .hamburger {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
