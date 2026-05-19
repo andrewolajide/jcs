@@ -1,12 +1,12 @@
 :root {
   /* Colors */
   --primary: rgb(28 28 28);
-  --accent: rgb(168 213 184);
-  --muted: rgb(107 212 168);
+  --accent: rgb(0, 233, 223);
+  --muted: rgb(107, 161, 212);
   --white: white;
   --secondarybg: rgb(28 28 28);
   --tertiarybg: rgb(248 247 244);
-  --mildbg: rgb(45 90 69);
+  --mildbg: rgb(16, 138, 203);
   --bg: white;
 
   /* Sizes & Effects */
