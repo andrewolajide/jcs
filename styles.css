@@ -1006,7 +1006,7 @@ footer {
 
 footer h3,
 footer h4 {
-  color: var(--primary);
+  color: rgb(16, 138, 203);
 }
 
 footer h4 {
@@ -1066,7 +1066,7 @@ footer p {
 }
 
 .column1 i {
-  background: var(--primary);
+  background: var(--mildbg);
   color: var(--white);
 }
 
