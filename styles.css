@@ -493,11 +493,11 @@ body.menu-open {
 }
 
 .trust-stat[aria-hidden="true"],
-.divider[aria-hidden="true"] {
+.trust-marquee-wrapper .divider[aria-hidden="true"] {
   display: none;
 }
 
-.divider {
+.trust-marquee-wrapper .divider {
   width: 1px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.55);
@@ -706,7 +706,7 @@ body.menu-open {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
-  gap: 1rem;
+  gap: 2rem;
   padding: 4rem 0 2rem;
 }
 
@@ -2126,12 +2126,6 @@ form em,
   font-size: 13px;
   color: #555;
   margin-bottom: 1.5rem;
-}
-
-.divider {
-  height: 1px;
-  background: #eee;
-  margin: 1.5rem 0;
 }
 
 .calendar-header {
